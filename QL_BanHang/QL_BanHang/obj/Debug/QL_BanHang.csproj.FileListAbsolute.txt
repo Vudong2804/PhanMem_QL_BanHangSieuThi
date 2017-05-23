@@ -37,3 +37,6 @@ F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.pdb
 D:\Thuc TapNhom222222222\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.exe.config
 D:\Thuc TapNhom222222222\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.exe
 D:\Thuc TapNhom222222222\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.pdb
+C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.exe.config
+C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.exe
+C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.pdb
