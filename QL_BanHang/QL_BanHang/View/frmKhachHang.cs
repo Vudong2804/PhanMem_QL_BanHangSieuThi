@@ -21,8 +21,10 @@ namespace QL_BanHang.View
         KhachHangMod kh = new KhachHangMod();
         KhachHangObj khObj = new KhachHangObj();
         int flag = 0;
+
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
+
             dgvKhachHang.DataSource = kh.GetData();
             dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
