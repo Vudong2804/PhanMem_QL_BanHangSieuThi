@@ -40,3 +40,6 @@ D:\Thuc TapNhom222222222\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Deb
 C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.exe.config
 C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.exe
 C:\Users\Phong_Tung\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.pdb
+C:\Users\Hiep\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.exe.config
+C:\Users\Hiep\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.exe
+C:\Users\Hiep\Documents\GitHub\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.pdb
