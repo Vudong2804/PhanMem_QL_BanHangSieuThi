@@ -50,8 +50,10 @@
     <Compile Include="Model\ConnectToSql.cs" />
     <Compile Include="Model\NguoiQuanLyMod.cs" />
     <Compile Include="Model\NhanVienMod.cs" />
+    <Compile Include="Model\QuayHangMod.cs" />
     <Compile Include="Object\NguoiQuanLyObj.cs" />
     <Compile Include="Object\NhanVienObj.cs" />
+    <Compile Include="Object\QuayHangobj.cs" />
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +80,12 @@
     <Compile Include="View\frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmQuayHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmQuayHang.Designer.cs">
+      <DependentUpon>frmQuayHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmQuayHang.resx">
+      <DependentUpon>frmQuayHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
