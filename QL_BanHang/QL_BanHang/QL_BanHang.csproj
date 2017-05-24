@@ -64,6 +64,12 @@
     <Compile Include="Object\NhaCCObj.cs" />
     <Compile Include="Object\NhanVienObj.cs" />
     <Compile Include="Object\QuayHangobj.cs" />
+    <Compile Include="View\frmHuongDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmHuongDan.Designer.cs">
+      <DependentUpon>frmHuongDan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\frmHuongDan.resx">
+      <DependentUpon>frmHuongDan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmNhaCungCap.resx">
       <DependentUpon>frmNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
