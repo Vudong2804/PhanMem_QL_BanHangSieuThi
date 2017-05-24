@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
 using QL_BanHang.Object;
+
 namespace QL_BanHang.Model
 {
-    class KhachHangMod
+    class CungCapMod
     {
+
         ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
 
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "select * from KhachHang";
+            cmd.CommandText = "select * from CungCap";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -35,9 +37,9 @@ namespace QL_BanHang.Model
             return dt;
         }
 
-        public bool AddKhachHang(KhachHangObj KhObj)
+        public bool AddCungCap(CungCapObj CcObj)
         {
-            cmd.CommandText = "Insert into KhachHang values('" + KhObj.MaKH1 + "',N'" + KhObj.TenKH1 + "',CONVERT(date,'" + KhObj.NS1.ToShortDateString() + "',103)  ,N'" + KhObj.GT1 + "',N'" + KhObj.DiaChi1 + "','" + KhObj.SDT1 + "')";
+            cmd.CommandText = "Insert into NhanVien values('" + CcObj.MaNCC1 + "','" + CcObj.MaMH1 + "','" + CcObj.SoLuong1 + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -56,9 +58,9 @@ namespace QL_BanHang.Model
             return false;
         }
 
-        public bool DeleteKhachHang(string ma)
+        public bool DeleteCungCap(string ma)
         {
-            cmd.CommandText = "xoa_khachhang'" + ma + "'";
+            cmd.CommandText = "Delete CungCap where MaNCC='" + ma + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -77,9 +79,9 @@ namespace QL_BanHang.Model
             return false;
         }
 
-        public bool UpdateKhachHang(KhachHangObj KhObj)
+        public bool UpdateCungCap(CungCapObj CcObj)
         {
-            cmd.CommandText = "Update KhachHang set TenKH=N'" + KhObj.TenKH1 + "',NS=CONVERT(date,'" + KhObj.NS1.ToShortDateString() + "',103)  ,GT=N'" + KhObj.GT1 + "',DiaChi=N'" + KhObj.DiaChi1 + "',SDT='" + KhObj.SDT1 + "' where MaKH='" + KhObj.MaKH1 + "'";
+            cmd.CommandText = "Update CungCap set SoLuong='" + CcObj.SoLuong1 + "' where MaNCC='" + CcObj.MaNCC1 + "' and MaMH='" + CcObj.MaMH1 + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -96,29 +98,6 @@ namespace QL_BanHang.Model
                 con.CloseConnection();
             }
             return false;
-        }
-        public DataTable SearchKhachHang(string MaKH)
-        {
-            DataTable dt = new DataTable();
-            cmd.CommandText = "select * from KhachHang  where MaKH like '%" + MaKH + "%'";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.strConn;
-            try
-            {
-                con.OpenConnect();
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                con.CloseConnection();
-                return dt;
-
-            }
-            catch (Exception ex)
-            {
-                string mes = ex.Message;
-                cmd.Dispose();
-                con.CloseConnection();
-            }
-            return dt;
         }
     }
 }

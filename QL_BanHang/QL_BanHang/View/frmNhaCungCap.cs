@@ -7,50 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.Object;
-using System.Data.SqlClient;
 using QL_BanHang.Model;
+using QL_BanHang.Object;
 namespace QL_BanHang.View
 {
-    public partial class frmKhachHang : Form
+    public partial class frmNhaCungCap : Form
     {
-        public frmKhachHang()
+        public frmNhaCungCap()
         {
             InitializeComponent();
         }
-        KhachHangMod kh = new KhachHangMod();
-        KhachHangObj khObj = new KhachHangObj();
+        NhaCCMod ncc = new NhaCCMod();
+        NhaCCObj nccObj = new NhaCCObj();
         int flag = 0;
-        private void frmKhachHang_Load(object sender, EventArgs e)
+        private void frmCungCap_Load(object sender, EventArgs e)
         {
-            dgvKhachHang.DataSource = kh.GetData();
-            dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvNhaCC.DataSource = ncc.GetData();
+            dgvNhaCC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
             Binding();
         }
         private void Binding()
         {
-            txtMaKH.DataBindings.Clear();
-            txtMaKH.DataBindings.Add("Text", dgvKhachHang.DataSource, "MaKH");
-            txtTenKH.DataBindings.Clear();
-            txtTenKH.DataBindings.Add("Text", dgvKhachHang.DataSource, "TenKH");
-            dtNgaySinh.DataBindings.Clear();
-            dtNgaySinh.DataBindings.Add("Text", dgvKhachHang.DataSource, "NS");
-            cmbGT.DataBindings.Clear();
-            cmbGT.DataBindings.Add("Text", dgvKhachHang.DataSource, "GT");
-            txtDiaChi.DataBindings.Clear();
-            txtDiaChi.DataBindings.Add("Text", dgvKhachHang.DataSource, "DiaChi");
+            txtMaNCC.DataBindings.Clear();
+            txtMaNCC.DataBindings.Add("Text", dgvNhaCC.DataSource, "MaNCC");
+            txtTenNCC.DataBindings.Clear();
+            txtTenNCC.DataBindings.Add("Text", dgvNhaCC.DataSource, "TenNCC");
             txtSDT.DataBindings.Clear();
-            txtSDT.DataBindings.Add("Text", dgvKhachHang.DataSource, "SDT");
+            txtSDT.DataBindings.Add("Text", dgvNhaCC.DataSource, "SDT");
+            txtDiaChi.DataBindings.Clear();
+            txtDiaChi.DataBindings.Add("Text", dgvNhaCC.DataSource, "DiaChi");
         }
         public void Dis_en(bool e)
         {
-            txtMaKH.Enabled = e;
-            txtTenKH.Enabled = e;
+            txtMaNCC.Enabled = e;
+            txtTenNCC.Enabled = e;
             txtDiaChi.Enabled = e;
             txtSDT.Enabled = e;
-            cmbGT.Enabled = e;
-            dtNgaySinh.Enabled = e;
             btnLuu.Enabled = e;
             btnSua.Enabled = !e;
             btnThem.Enabled = !e;
@@ -59,28 +52,18 @@ namespace QL_BanHang.View
         }
         private void clean()
         {
-            txtMaKH.Clear();
-            txtTenKH.Clear();
-            txtDiaChi.Clear();
+            txtMaNCC.Clear();
+            txtTenNCC.Clear();
             txtSDT.Clear();
-            dtNgaySinh.Value = DateTime.Now;
+            txtDiaChi.Clear();
 
         }
-        private void GanDuLieu(KhachHangObj Khobj)
+        private void GanDuLieu(NhaCCObj nccObj)
         {
-            Khobj.MaKH1 = txtMaKH.Text.ToString().Trim();
-            Khobj.TenKH1 = txtTenKH.Text.ToString().Trim();
-            Khobj.NS1 = dtNgaySinh.Value;
-            Khobj.GT1 = cmbGT.Text.ToString().Trim();
-            Khobj.SDT1 = txtSDT.Text.ToString().Trim();
-            Khobj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
-        }
-        private void LoadConTroll()
-        {
-            cmbGT.Items.Clear();
-            cmbGT.Items.Add("Nam");
-            cmbGT.Items.Add("Nữ");
-
+            nccObj.MaNCC1 = txtMaNCC.Text.ToString().Trim();
+            nccObj.TenNCC1 = txtTenNCC.Text.ToString().Trim();
+            nccObj.SDT1 = txtSDT.Text.ToString().Trim();
+            nccObj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -88,14 +71,12 @@ namespace QL_BanHang.View
             flag = 0;
             clean();
             Dis_en(true);
-            LoadConTroll();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             flag = 1;
             Dis_en(true);
-            LoadConTroll();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -104,7 +85,7 @@ namespace QL_BanHang.View
             {
                 if (dr == DialogResult.Yes)
                 {
-                    if (kh.DeleteKhachHang(txtMaKH.Text.ToString().Trim()))
+                    if (ncc.DeleteNhaCC(txtMaNCC.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //frmNhanVien_Load(sender, e);
@@ -118,16 +99,16 @@ namespace QL_BanHang.View
                 {
                     return;
                 }
-                frmKhachHang_Load(sender, e);
+                frmCungCap_Load(sender, e);
             }
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            GanDuLieu(khObj);
+            GanDuLieu(nccObj);
             if (flag == 0)   // thêm
             {
-                if (kh.AddKhachHang(khObj))
+                if (ncc.AddNhaCC(nccObj))
                 {
                     MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // frmNhanVien_Load(sender, e);
@@ -139,7 +120,7 @@ namespace QL_BanHang.View
             }
             else            // sửa
             {
-                if (kh.UpdateKhachHang(khObj))
+                if (ncc.UpdateNhaCC(nccObj))
                 {
                     MessageBox.Show("Sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  frmNhanVien_Load(sender, e);
@@ -149,13 +130,13 @@ namespace QL_BanHang.View
                     MessageBox.Show("Sửa không thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            frmKhachHang_Load(sender, e);
+            frmCungCap_Load(sender, e); ;
             Dis_en(false);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            frmKhachHang_Load(sender, e);
+            frmCungCap_Load(sender, e); ;
             Dis_en(false);
         }
 

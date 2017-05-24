@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using QL_BanHang.Object;
+
+
+
 namespace QL_BanHang.Model
 {
-    class KhachHangMod
+    class MatHangMod
     {
         ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
-
         public DataTable GetData()
         {
-            DataTable dt = new DataTable();
-            cmd.CommandText = "select * from KhachHang";
+            DataTable dt = new System.Data.DataTable();
+            cmd.CommandText = "select * from MatHang";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -35,72 +37,10 @@ namespace QL_BanHang.Model
             return dt;
         }
 
-        public bool AddKhachHang(KhachHangObj KhObj)
+        public DataTable GetData(string dieukien)
         {
-            cmd.CommandText = "Insert into KhachHang values('" + KhObj.MaKH1 + "',N'" + KhObj.TenKH1 + "',CONVERT(date,'" + KhObj.NS1.ToShortDateString() + "',103)  ,N'" + KhObj.GT1 + "',N'" + KhObj.DiaChi1 + "','" + KhObj.SDT1 + "')";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.strConn;
-            try
-            {
-                con.OpenConnect();
-                cmd.ExecuteNonQuery();
-                con.CloseConnection();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mes = ex.Message;
-                cmd.Dispose();
-                con.CloseConnection();
-            }
-            return false;
-        }
-
-        public bool DeleteKhachHang(string ma)
-        {
-            cmd.CommandText = "xoa_khachhang'" + ma + "'";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.strConn;
-            try
-            {
-                con.OpenConnect();
-                cmd.ExecuteNonQuery();
-                con.CloseConnection();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mes = ex.Message;
-                cmd.Dispose();
-                con.CloseConnection();
-            }
-            return false;
-        }
-
-        public bool UpdateKhachHang(KhachHangObj KhObj)
-        {
-            cmd.CommandText = "Update KhachHang set TenKH=N'" + KhObj.TenKH1 + "',NS=CONVERT(date,'" + KhObj.NS1.ToShortDateString() + "',103)  ,GT=N'" + KhObj.GT1 + "',DiaChi=N'" + KhObj.DiaChi1 + "',SDT='" + KhObj.SDT1 + "' where MaKH='" + KhObj.MaKH1 + "'";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = con.strConn;
-            try
-            {
-                con.OpenConnect();
-                cmd.ExecuteNonQuery();
-                con.CloseConnection();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                string mes = ex.Message;
-                cmd.Dispose();
-                con.CloseConnection();
-            }
-            return false;
-        }
-        public DataTable SearchKhachHang(string MaKH)
-        {
-            DataTable dt = new DataTable();
-            cmd.CommandText = "select * from KhachHang  where MaKH like '%" + MaKH + "%'";
+            DataTable dt = new System.Data.DataTable();
+            cmd.CommandText = "select * from MatHang" + dieukien;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -109,8 +49,6 @@ namespace QL_BanHang.Model
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 con.CloseConnection();
-                return dt;
-
             }
             catch (Exception ex)
             {
@@ -119,6 +57,69 @@ namespace QL_BanHang.Model
                 con.CloseConnection();
             }
             return dt;
+        }
+
+        public bool AddMatHang(MatHangObj mhObj)
+        {
+            cmd.CommandText = "Insert into MatHang values('" + mhObj.MaMH1 + "',N'" + mhObj.TenMH1 + "','" + mhObj.MaNCC1 + "','" + mhObj.MaKho1 + "','" + mhObj.DonGia1 + "','" + mhObj.MaQH1 + "')";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con.strConn;
+            try
+            {
+                con.OpenConnect();
+                cmd.ExecuteNonQuery();
+                con.CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string mes = ex.Message;
+                cmd.Dispose();
+                con.CloseConnection();
+            }
+            return false;
+        }
+
+        public bool DeleteMatHang(string ma)
+        {
+            cmd.CommandText = "xoa_MatHang'" + ma + "'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con.strConn;
+            try
+            {
+                con.OpenConnect();
+                cmd.ExecuteNonQuery();
+                con.CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string mes = ex.Message;
+                cmd.Dispose();
+                con.CloseConnection();
+            }
+            return false;
+        }
+
+        public bool UpdateMatHang(MatHangObj mhObj)
+        {
+            cmd.CommandText = "Update MatHang set TenMH=N'" + mhObj.TenMH1 + "',MaNCC =N'" + mhObj.MaNCC1 + "',MaKho=N'" + mhObj.MaKho1 + "',DonGia='" + mhObj.DonGia1 + "',MaQH='" + mhObj.MaQH1 + "' where MaMH='" + mhObj.MaMH1 + "'";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con.strConn;
+            try
+            {
+                con.OpenConnect();
+                cmd.ExecuteNonQuery();
+                con.CloseConnection();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string mes = ex.Message;
+                cmd.Dispose();
+                con.CloseConnection();
+            }
+            return false;
         }
     }
 }
