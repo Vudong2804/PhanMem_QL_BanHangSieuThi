@@ -47,15 +47,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\ChiTietHoaDonMod.cs" />
     <Compile Include="Model\ConnectToSql.cs" />
+    <Compile Include="Model\HoaDonBanHangMod.cs" />
     <Compile Include="Model\MatHangMod.cs" />
     <Compile Include="Model\NguoiQuanLyMod.cs" />
     <Compile Include="Model\NhanVienMod.cs" />
     <Compile Include="Model\QuayHangMod.cs" />
+    <Compile Include="Object\ChiTietHoaDonObj.cs" />
+    <Compile Include="Object\HoaDonBanHangObj.cs" />
     <Compile Include="Object\MatHangObj.cs" />
     <Compile Include="Object\NguoiQuanLyObj.cs" />
     <Compile Include="Object\NhanVienObj.cs" />
     <Compile Include="Object\QuayHangobj.cs" />
+    <Compile Include="View\frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +114,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\frmHoaDon.resx">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
