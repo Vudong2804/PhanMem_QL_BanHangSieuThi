@@ -53,6 +53,7 @@
     <Compile Include="Model\KhachHangMod.cs" />
     <Compile Include="Model\MatHangMod.cs" />
     <Compile Include="Model\NguoiQuanLyMod.cs" />
+    <Compile Include="Model\NhaCCMod.cs" />
     <Compile Include="Model\NhanVienMod.cs" />
     <Compile Include="Model\QuayHangMod.cs" />
     <Compile Include="Object\ChiTietHoaDonObj.cs" />
@@ -60,8 +61,15 @@
     <Compile Include="Object\KhachHangObj.cs" />
     <Compile Include="Object\MatHangObj.cs" />
     <Compile Include="Object\NguoiQuanLyObj.cs" />
+    <Compile Include="Object\NhaCCObj.cs" />
     <Compile Include="Object\NhanVienObj.cs" />
     <Compile Include="Object\QuayHangobj.cs" />
+    <Compile Include="View\frmNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmNhaCungCap.Designer.cs">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +130,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\frmNhaCungCap.resx">
+      <DependentUpon>frmNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
