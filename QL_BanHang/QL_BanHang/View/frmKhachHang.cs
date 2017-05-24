@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QL_BanHang.Model;
 using QL_BanHang.Object;
-
+using System.Data.SqlClient;
+using QL_BanHang.Model;
 namespace QL_BanHang.View
 {
     public partial class frmKhachHang : Form
@@ -21,10 +21,8 @@ namespace QL_BanHang.View
         KhachHangMod kh = new KhachHangMod();
         KhachHangObj khObj = new KhachHangObj();
         int flag = 0;
-
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
-
             dgvKhachHang.DataSource = kh.GetData();
             dgvKhachHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
