@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QL_BanHang.Model;
 using QL_BanHang.Object;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace QL_BanHang.Model
 {
     class CungCapMod
     {
-
         ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
 
