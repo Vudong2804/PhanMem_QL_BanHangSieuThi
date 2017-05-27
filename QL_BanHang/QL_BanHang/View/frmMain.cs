@@ -54,12 +54,6 @@ namespace QL_BanHang
             ds.Show();
         }
 
-        private void btnPhanLoai_Click(object sender, EventArgs e)
-        {
-            frmPhanLoai ds = new frmPhanLoai();
-            this.Hide();            // đóng form cũ lại
-            ds.Show();
-        }
 
         private void btnQuayHang_Click(object sender, EventArgs e)
         {
@@ -70,7 +64,7 @@ namespace QL_BanHang
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            frmNhaCC ds = new frmNhaCC();
+            frmNhaCungCap ds = new frmNhaCungCap();
             this.Hide();            // đóng form cũ lại
             ds.Show();
         }

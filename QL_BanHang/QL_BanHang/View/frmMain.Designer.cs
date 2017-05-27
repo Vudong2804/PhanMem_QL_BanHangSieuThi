@@ -141,7 +141,7 @@
             this.btnPhanLoai.TabIndex = 2;
             this.btnPhanLoai.Text = "Phân Loại";
             this.btnPhanLoai.UseVisualStyleBackColor = true;
-            this.btnPhanLoai.Click += new System.EventHandler(this.btnPhanLoai_Click);
+            //this.btnPhanLoai.Click += new System.EventHandler(this.btnPhanLoai_Click);
             // 
             // btnNhaCungCap
             // 

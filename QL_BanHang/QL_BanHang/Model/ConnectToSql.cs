@@ -30,7 +30,7 @@ namespace QL_BanHang.Model
         #endregion
 
         #region contruction
-        public void ConnectToSQL()
+        public ConnectToSql()
         {
             Conn = new SqlConnection(@"Data Source=DESKTOP-P8Q0593\SQLEXPRESS;Initial Catalog=quản lý bán hàng siêu thị;Integrated Security=True");
         }

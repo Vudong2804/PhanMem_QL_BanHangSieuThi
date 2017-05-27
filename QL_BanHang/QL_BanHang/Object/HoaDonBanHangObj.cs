@@ -8,7 +8,7 @@ namespace QL_BanHang.Object
 {
     class HoaDonBanHangObj
     {
-        string MaHD, MaNV, MaKH, TongTien;
+        string MaHD, MaNV, MaKH;
         DateTime NgayLamHD;
 
         public string MaHD1
@@ -63,27 +63,14 @@ namespace QL_BanHang.Object
             }
         }
 
-        public string TongTien1
-        {
-            get
-            {
-                return TongTien;
-            }
-
-            set
-            {
-                TongTien = value;
-            }
-        }
 
         public HoaDonBanHangObj() { }
-        public HoaDonBanHangObj(string MaHD, DateTime NgayLamHD, string MaNV, string MaKH, string TongTien)
+        public HoaDonBanHangObj(string MaHD, DateTime NgayLamHD, string MaNV, string MaKH)
         {
             this.MaHD = MaHD;
             this.NgayLamHD = NgayLamHD;
             this.MaNV = MaNV;
             this.MaKH = MaKH;
-            this.TongTien = TongTien;
         }
     }
 }
