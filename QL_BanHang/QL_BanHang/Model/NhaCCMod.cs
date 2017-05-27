@@ -10,7 +10,7 @@ namespace QL_BanHang.Model
 {
     class NhaCCMod
     {
-        ConnectToSQL con = new ConnectToSQL();
+        ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
 
         public DataTable GetData()

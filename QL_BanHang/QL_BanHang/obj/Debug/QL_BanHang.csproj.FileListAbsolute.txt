@@ -61,3 +61,20 @@ D:\Thực Tập Nhóm\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\
 D:\Thực Tập Nhóm\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmNhanVien.resources
 D:\Thực Tập Nhóm\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmQuayHang.resources
 D:\Thực Tập Nhóm\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.GenerateResource.Cache
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csprojResolveAssemblyReference.cache
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.Properties.Resources.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmCungCap.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmHuongDan.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmKho.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmNhaCungCap.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmHoaDon.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmKhachHang.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmLogin.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.Form1.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmMatHang.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmNguoiQuanLy.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmNhanVien.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.View.frmQuayHang.resources
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\obj\Debug\QL_BanHang.csproj.GenerateResource.Cache
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.exe
+F:\PhanMem_QL_BanHangSieuThi\QL_BanHang\QL_BanHang\bin\Debug\QL_BanHang.pdb

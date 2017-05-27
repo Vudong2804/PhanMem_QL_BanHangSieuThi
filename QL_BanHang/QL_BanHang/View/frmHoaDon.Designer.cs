@@ -46,14 +46,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvHDBH = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbTongTien = new System.Windows.Forms.Label();
             this.cmbKhachHang = new System.Windows.Forms.ComboBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dtNgayLamHD = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -238,14 +236,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbTongTien);
             this.groupBox1.Controls.Add(this.cmbKhachHang);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.dtNgayLamHD);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtTenNV);
             this.groupBox1.Controls.Add(this.label3);
@@ -258,15 +254,6 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
-            // 
-            // lbTongTien
-            // 
-            this.lbTongTien.AutoSize = true;
-            this.lbTongTien.Location = new System.Drawing.Point(133, 114);
-            this.lbTongTien.Name = "lbTongTien";
-            this.lbTongTien.Size = new System.Drawing.Size(13, 13);
-            this.lbTongTien.TabIndex = 16;
-            this.lbTongTien.Text = "0";
             // 
             // cmbKhachHang
             // 
@@ -322,15 +309,6 @@
             this.dtNgayLamHD.Name = "dtNgayLamHD";
             this.dtNgayLamHD.Size = new System.Drawing.Size(138, 20);
             this.dtNgayLamHD.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tổng Tiền";
             // 
             // label4
             // 
@@ -428,14 +406,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvHDBH;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.ComboBox cmbKhachHang;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DateTimePicker dtNgayLamHD;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTenNV;
         private System.Windows.Forms.Label label3;

@@ -18,7 +18,7 @@ namespace QL_BanHang.Model
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = @"select hd.MaHD,hd.NgayLamHD, nv.TenNV,kh.TenKH,hd.TongTien from NhanVien nv,KhachHang kh, HoaDonBanHang hd where hd.MaKH = kh.MaKH and hd.MaNV = nv.MaNV";
+            cmd.CommandText = @"select hd.MaHD,hd.NgayLamHD, nv.TenNV,kh.TenKH from NhanVien nv,KhachHang kh, HoaDonBanHang hd where hd.MaKH = kh.MaKH and hd.MaNV = nv.MaNV";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -39,7 +39,7 @@ namespace QL_BanHang.Model
 
         public bool AddHoaDonBanHang(HoaDonBanHangObj hdbhObj)
         {
-            cmd.CommandText = "Insert into HoaDonBanHang values('" + hdbhObj.MaHD1 + "',CONVERT(date,'" + hdbhObj.NgayLamHD1.ToShortDateString() + "',103)  ,'" + hdbhObj.MaNV1 + "','" + hdbhObj.MaKH1 + "','" + hdbhObj.TongTien1 + "')";
+            cmd.CommandText = "Insert into HoaDonBanHang values('" + hdbhObj.MaHD1 + "',CONVERT(date,'" + hdbhObj.NgayLamHD1.ToShortDateString() + "',103)  ,'" + hdbhObj.MaNV1 + "','" + hdbhObj.MaKH1 + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try

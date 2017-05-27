@@ -12,7 +12,7 @@ namespace QL_BanHang.Model
 {
     class KhoMod
     {
-        ConnectToSQL con = new ConnectToSQL();
+        ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
 
         public DataTable GetData()
