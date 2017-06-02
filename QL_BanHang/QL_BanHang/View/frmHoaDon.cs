@@ -51,7 +51,7 @@ namespace QL_BanHang.View
         private void Binding1()
         {
             cmbHangHoa.DataBindings.Clear();
-            cmbHangHoa.DataBindings.Add("Text", dgvCTHD.DataSource, "TenMH");
+            cmbHangHoa.DataBindings.Add("Text", dgvCTHD.DataSource, "MaMH");
             txtDonGia.DataBindings.Clear();
             txtDonGia.DataBindings.Add("Text", dgvCTHD.DataSource, "DonGia");
             txtSoLuong.DataBindings.Clear();
@@ -70,7 +70,7 @@ namespace QL_BanHang.View
         {
             MatHangMod hh = new MatHangMod();
             cmbHangHoa.DataSource = hh.GetData();
-            cmbHangHoa.DisplayMember = "TenMH";
+            cmbHangHoa.DisplayMember = "MaMH";
             cmbHangHoa.ValueMember = "MaMH";
         }
         private void Clear()
@@ -197,7 +197,7 @@ namespace QL_BanHang.View
             {
                 if (dr == DialogResult.Yes)
                 {
-                    if (cthd.DeleteChiTietHoaDon(txtMaHD.Text.ToString().Trim()))
+                    if (cthd.DeleteChiTietHoaDon(cmbHangHoa.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //frmNhanVien_Load(sender, e);

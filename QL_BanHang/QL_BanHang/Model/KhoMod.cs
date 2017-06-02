@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using QL_BanHang.Model;
 using QL_BanHang.Object;
+
 namespace QL_BanHang.Model
 {
-    class NhaCCMod
+    class KhoMod
     {
         ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
@@ -16,7 +18,7 @@ namespace QL_BanHang.Model
         public DataTable GetData()
         {
             DataTable dt = new DataTable();
-            cmd.CommandText = "select * from NhaCungCap";
+            cmd.CommandText = "select * from Kho";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -35,9 +37,9 @@ namespace QL_BanHang.Model
             return dt;
         }
 
-        public bool AddNhaCC(NhaCCObj nccObj)
+        public bool AddKho(KhoObj KObj)
         {
-            cmd.CommandText = "Insert into NhaCungCap values('" + nccObj.MaNCC1 + "',N'" + nccObj.TenNCC1 + "','" + nccObj.SDT1 + "',N'" + nccObj.DiaChi1 + "')";
+            cmd.CommandText = "Insert into Kho values('" + KObj.MaKho1 + "',N'" + KObj.TenKho1 + "',N'" + KObj.DiaChi1 + "','" + KObj.MaNV1 + "')";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -56,9 +58,9 @@ namespace QL_BanHang.Model
             return false;
         }
 
-        public bool DeleteNhaCC(string ma)
+        public bool DeleteKho(string ma)
         {
-            cmd.CommandText = "xoa_NhaCC'" + ma + "'";
+            cmd.CommandText = "Delete Kho where MaKho='" + ma + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try
@@ -77,9 +79,9 @@ namespace QL_BanHang.Model
             return false;
         }
 
-        public bool UpdateNhaCC(NhaCCObj nccObj)
+        public bool UpdateKho(KhoObj KObj)
         {
-            cmd.CommandText = "Update NhaCungCap set TenNCC=N'" + nccObj.TenNCC1 + "',SDT='" + nccObj.SDT1 + "',DiaChi=N'" + nccObj.DiaChi1 + "' where MaNCC='" + nccObj.MaNCC1 + "'";
+            cmd.CommandText = "Update Kho set TenKho=N'" + KObj.TenKho1 + "',DiaChi=N'" + KObj.DiaChi1 + "',MaNV='" + KObj.MaNV1 + "' where MaKho='" + KObj.MaKho1 + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.strConn;
             try

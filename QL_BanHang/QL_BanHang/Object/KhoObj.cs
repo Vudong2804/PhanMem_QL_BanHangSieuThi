@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 
 namespace QL_BanHang.Object
 {
-    class HoaDonBanHangObj
+    class KhoObj
     {
-        string MaHD, MaNV, MaKH;
-        DateTime NgayLamHD;
+        string MaKho, TenKho, DiaChi, MaNV;
 
-        public string MaHD1
+        public string DiaChi1
         {
             get
             {
-                return MaHD;
+                return DiaChi;
             }
 
             set
             {
-                MaHD = value;
+                DiaChi = value;
             }
         }
 
-        public string MaKH1
+        public string MaKho1
         {
             get
             {
-                return MaKH;
+                return MaKho;
             }
 
             set
             {
-                MaKH = value;
+                MaKho = value;
             }
         }
 
@@ -50,27 +49,26 @@ namespace QL_BanHang.Object
             }
         }
 
-        public DateTime NgayLamHD1
+        public string TenKho1
         {
             get
             {
-                return NgayLamHD;
+                return TenKho;
             }
 
             set
             {
-                NgayLamHD = value;
+                TenKho = value;
             }
         }
 
-
-        public HoaDonBanHangObj() { }
-        public HoaDonBanHangObj(string MaHD, DateTime NgayLamHD, string MaNV, string MaKH)
+        public KhoObj() { }
+        public KhoObj(string MaKho, string TenKho, string DiaChi, string MaNV)
         {
-            this.MaHD = MaHD;
-            this.NgayLamHD = NgayLamHD;
+            this.MaKho = MaKho;
+            this.TenKho = TenKho;
+            this.DiaChi = DiaChi;
             this.MaNV = MaNV;
-            this.MaKH = MaKH;
         }
     }
 }
