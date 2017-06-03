@@ -52,6 +52,7 @@ namespace QL_BanHang.View
             btnThem.Enabled = !e;
             btnHuy.Enabled = e;
             btnXoa.Enabled = !e;
+
         }
         private void clean()
         {
@@ -149,5 +150,6 @@ namespace QL_BanHang.View
             this.Hide();
             ds.Show();
         }
+        
     }
 }

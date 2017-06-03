@@ -21,6 +21,7 @@ namespace QL_BanHang.Object
             {
                 DiaChi = value;
             }
+           
         }
 
         public string MaKho1
