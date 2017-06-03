@@ -13,6 +13,7 @@ namespace QL_BanHang.Object
     {
         string MaNCC, MaMH, SoLuong;
 
+
         public string MaMH1
         {
             get
