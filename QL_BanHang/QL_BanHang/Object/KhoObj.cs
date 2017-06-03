@@ -64,12 +64,12 @@ namespace QL_BanHang.Object
         }
 
         public KhoObj() { }
-        public KhoObj(string MaKho, string TenKho, string DiaChi, string MaNV)
+        public KhoObj(string maKho, string tenKho, string diaChi, string maNV)
         {
-            this.MaKho = MaKho;
-            this.TenKho = TenKho;
-            this.DiaChi = DiaChi;
-            this.MaNV = MaNV;
+            this.MaKho = maKho;
+            this.TenKho = tenKho;
+            this.DiaChi = diaChi;
+            this.MaNV = maNV;
         }
     }
 }
