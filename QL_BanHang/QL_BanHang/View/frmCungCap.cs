@@ -14,8 +14,8 @@ namespace QL_BanHang.View
 {
     public partial class frmCungCap : Form
     {
-        CungCapMod cc = new CungCapMod();
-        CungCapObj ccObj = new CungCapObj();
+        CungCapMod CCMod = new CungCapMod();
+        CungCapObj CCObj = new CungCapObj();
         int flag = 0;
         public frmCungCap()
         {
@@ -24,7 +24,7 @@ namespace QL_BanHang.View
 
         private void frmCungCap_Load(object sender, EventArgs e)
         {
-            dgvCungCap.DataSource = cc.GetData();
+            dgvCungCap.DataSource = CCMod.GetData();
             dgvCungCap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
             Binding();
@@ -82,7 +82,7 @@ namespace QL_BanHang.View
             {
                 if (dr == DialogResult.Yes)
                 {
-                    if (cc.DeleteCungCap(txtMaNCC.Text.ToString().Trim()))
+                    if (CCMod.DeleteCungCap(txtMaNCC.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //frmNhanVien_Load(sender, e);
@@ -102,10 +102,10 @@ namespace QL_BanHang.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            GanDuLieu(ccObj);
+            GanDuLieu(CCObj);
             if (flag == 0)   // thêm
             {
-                if (cc.AddCungCap(ccObj))
+                if (CCMod.AddCungCap(CCObj))
                 {
                     MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // frmNhanVien_Load(sender, e);
@@ -117,7 +117,7 @@ namespace QL_BanHang.View
             }
             else            // sửa
             {
-                if (cc.UpdateCungCap(ccObj))
+                if (CCMod.UpdateCungCap(CCObj))
                 {
                     MessageBox.Show("Sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  frmNhanVien_Load(sender, e);
