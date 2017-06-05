@@ -20,7 +20,6 @@ namespace QL_BanHang.View
         HoaDonBanHangObj hdbhObj = new HoaDonBanHangObj();
         ChiTietHoaDonMod cthd = new ChiTietHoaDonMod();
         ChiTietHoaDonObj cthdObj = new ChiTietHoaDonObj();
-       // int flag = 0;
         public frmHoaDon()
         {
             InitializeComponent();
@@ -32,7 +31,6 @@ namespace QL_BanHang.View
             dt = hdbh.GetData();
             dgvHDBH.DataSource = dt;
             Binding();
-            // Binding1();
             Dis_en(false);
         }
         private void Binding()
@@ -45,19 +43,17 @@ namespace QL_BanHang.View
             txtTenNV.DataBindings.Add("Text", dgvHDBH.DataSource, "TenNV");
             cmbKhachHang.DataBindings.Clear();
             cmbKhachHang.DataBindings.Add("Text", dgvHDBH.DataSource, "TenKH");
-            //txtTongTien.DataBindings.Clear();
-            //txtTongTien.DataBindings.Add("Text", dgvHDBH.DataSource, "TongTien");
         }
         private void Binding1()
         {
-            //cmbHangHoa.DataBindings.Clear();
-            //cmbHangHoa.DataBindings.Add("Text", dgvCTHD.DataSource, "MaMH");
-            //txtDonGia.DataBindings.Clear();
-            //txtDonGia.DataBindings.Add("Text", dgvCTHD.DataSource, "DonGia");
-            //txtSoLuong.DataBindings.Clear();
-            //txtSoLuong.DataBindings.Add("Text", dgvCTHD.DataSource, "SoLuong");
-            //txtThanhTien.DataBindings.Clear();
-            //txtThanhTien.DataBindings.Add("Text", dgvCTHD.DataSource, "ThanhTien");
+            cmbHangHoa.DataBindings.Clear();
+            cmbHangHoa.DataBindings.Add("Text", dgvCTHD.DataSource, "MaMH");
+            txtDonGia.DataBindings.Clear();
+            txtDonGia.DataBindings.Add("Text", dgvCTHD.DataSource, "DonGia");
+            txtSoLuong.DataBindings.Clear();
+            txtSoLuong.DataBindings.Add("Text", dgvCTHD.DataSource, "SoLuong");
+            txtThanhTien.DataBindings.Clear();
+            txtThanhTien.DataBindings.Add("Text", dgvCTHD.DataSource, "ThanhTien");
         }
         private void Load_cmbKhachhang()
         {
@@ -92,7 +88,6 @@ namespace QL_BanHang.View
             dtNgayLamHD.Enabled = e;
             txtDonGia.Enabled = e;
             txtThanhTien.Enabled = e;
-            // txtTongTien.Enabled = e;
             btnThem.Enabled = !e;
             btnXoa.Enabled = !e;
             btnLuu.Enabled = e;
@@ -109,7 +104,6 @@ namespace QL_BanHang.View
             hdbhObj.MaNV1 = txtTenNV.Text.ToString().Trim();
             hdbhObj.MaKH1 = cmbKhachHang.SelectedValue.ToString();
             hdbhObj.NgayLamHD1 = dtNgayLamHD.Value;
-            // hdbhObj.TongTien1 = txtTongTien.Text.ToString().Trim();
         }
         private void GanDuLieu1(ChiTietHoaDonObj cthdObj)
         {
@@ -130,19 +124,19 @@ namespace QL_BanHang.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //GanDuLieu(hdbhObj);
+            GanDuLieu(hdbhObj);
 
-            //if (hdbh.AddHoaDonBanHang(hdbhObj))
-            //{
-            //    GanDuLieu1(cthdObj);
-            //    if (cthd.AddChiTietHoaDon(cthdObj))
-            //        MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    else
-            //        MessageBox.Show("Thêm chi tiết không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //else
-            //    MessageBox.Show("Thêm hóa đơn không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //frmHoaDon_Load(sender, e);
+            if (hdbh.AddHoaDonBanHang(hdbhObj))
+            {
+                GanDuLieu1(cthdObj);
+                if (cthd.AddChiTietHoaDon(cthdObj))
+                    MessageBox.Show("Thêm hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Thêm chi tiết không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Thêm hóa đơn không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            frmHoaDon_Load(sender, e);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -155,7 +149,6 @@ namespace QL_BanHang.View
                     if (hdbh.DeleteHoaDonBanHang(txtMaHD.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //frmNhanVien_Load(sender, e);
                     }
                     else
                     {
@@ -200,7 +193,6 @@ namespace QL_BanHang.View
                     if (cthd.DeleteChiTietHoaDon(cmbHangHoa.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //frmNhanVien_Load(sender, e);
                     }
                     else
                     {

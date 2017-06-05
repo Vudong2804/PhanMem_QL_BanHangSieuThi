@@ -80,5 +80,26 @@ namespace QL_BanHang
         {
 
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin lg = new frmLogin();
+            this.Hide();
+            lg.Show();
+        }
+
+        private void hướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHuongDan hd = new frmHuongDan();
+            this.Hide();
+            hd.Show();
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin lg = new frmLogin();
+            this.Hide();
+            lg.Show();
+        }
     }
 }
