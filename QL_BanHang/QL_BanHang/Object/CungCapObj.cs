@@ -13,6 +13,7 @@ namespace QL_BanHang.Object
     {
         string MaNCC, MaMH, SoLuong;
 
+
         public string MaMH1
         {
             get
@@ -52,11 +53,11 @@ namespace QL_BanHang.Object
             }
         }
         public CungCapObj() { }
-        public CungCapObj(string MaNCC, string MaMH, string SoLuong)
+        public CungCapObj(string maNCC, string maMH, string soLuong)
         {
-            this.MaNCC = MaNCC;
-            this.MaMH = MaMH;
-            this.SoLuong = SoLuong;
+            this.MaNCC = maNCC;
+            this.MaMH = maMH;
+            this.SoLuong = soLuong;
         }
 
     }

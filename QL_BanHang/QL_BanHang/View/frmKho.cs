@@ -19,13 +19,13 @@ namespace QL_BanHang.View
         {
             InitializeComponent();
         }
-        KhoMod kho = new KhoMod();
-        KhoObj k = new KhoObj();
+        KhoMod KhoMod = new KhoMod();
+        KhoObj KhoObj = new KhoObj();
         int flag = 0;
 
         private void frmKho_Load(object sender, EventArgs e)
         {
-            dgvKho.DataSource = kho.GetData();
+            dgvKho.DataSource = KhoMod.GetData();
             dgvKho.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
             Binding();
@@ -52,6 +52,7 @@ namespace QL_BanHang.View
             btnThem.Enabled = !e;
             btnHuy.Enabled = e;
             btnXoa.Enabled = !e;
+
         }
         private void clean()
         {
@@ -61,12 +62,12 @@ namespace QL_BanHang.View
             txtDiaChi.Clear();
 
         }
-        private void GanDuLieu(KhoObj Kobj)
+        private void GanDuLieu(KhoObj KhoObj)
         {
-            Kobj.MaNV1 = txtMaNV.Text.ToString().Trim();
-            Kobj.TenKho1 = txtTenKho.Text.ToString().Trim();
-            Kobj.MaKho1 = txtMaKho.Text.ToString().Trim();
-            Kobj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
+            KhoObj.MaNV1 = txtMaNV.Text.ToString().Trim();
+            KhoObj.TenKho1 = txtTenKho.Text.ToString().Trim();
+            KhoObj.MaKho1 = txtMaKho.Text.ToString().Trim();
+            KhoObj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace QL_BanHang.View
             {
                 if (dr == DialogResult.Yes)
                 {
-                    if (kho.DeleteKho(txtMaKho.Text.ToString().Trim()))
+                    if (KhoMod.DeleteKho(txtMaKho.Text.ToString().Trim()))
                     {
                         MessageBox.Show("Xóa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //frmNhanVien_Load(sender, e);
@@ -108,10 +109,10 @@ namespace QL_BanHang.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            GanDuLieu(k);
+            GanDuLieu(KhoObj);
             if (flag == 0)   // thêm
             {
-                if (kho.AddKho(k))
+                if (KhoMod.AddKho(KhoObj))
                 {
                     MessageBox.Show("Thêm thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // frmNhanVien_Load(sender, e);
@@ -123,7 +124,7 @@ namespace QL_BanHang.View
             }
             else            // sửa
             {
-                if (kho.UpdateKho(k))
+                if (KhoMod.UpdateKho(KhoObj))
                 {
                     MessageBox.Show("Sửa thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //  frmNhanVien_Load(sender, e);
@@ -149,5 +150,6 @@ namespace QL_BanHang.View
             this.Hide();
             ds.Show();
         }
+        
     }
 }

@@ -15,6 +15,7 @@ namespace QL_BanHang.Model
     {
         ConnectToSql con = new ConnectToSql();
         SqlCommand cmd = new SqlCommand();
+
         public DataTable GetData()
         {
             DataTable dt = new System.Data.DataTable();

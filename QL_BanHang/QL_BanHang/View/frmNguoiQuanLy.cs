@@ -17,6 +17,7 @@ namespace QL_BanHang.View
         {
             InitializeComponent();
         }
+        // khởi tạo đối tượng
         NguoiQuanLyMod nql = new NguoiQuanLyMod();
         NguoiQuanLyObj nqlObj = new NguoiQuanLyObj();
         int flag = 0;
@@ -26,6 +27,45 @@ namespace QL_BanHang.View
             dgvNQL.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             Dis_en(false);
             Binding();
+        }
+       
+        public void Dis_en(bool e)
+        {
+            txtTenNQL.Enabled = e;
+            txtNQL.Enabled = e;
+            txtDiaChi.Enabled = e;
+            txtSDT.Enabled = e;
+            dtNgayNC.Enabled = e;
+            cmbGT.Enabled = e;
+            dtNS.Enabled = e;
+            btnLuu.Enabled = e;
+            btnSua.Enabled = !e;
+            btnThem.Enabled = !e;
+            btnHuy.Enabled = e;
+            btnXoa.Enabled = !e;
+
+        }
+        private void clean()
+        {
+            txtNQL.Clear();
+            txtTenNQL.Clear();
+            txtDiaChi.Clear();
+            txtSDT.Clear();
+            dtNS.Value = DateTime.Now;
+            dtNgayNC.Value = DateTime.Now;
+
+
+        }
+        private void GanDuLieu(NguoiQuanLyObj nqlObj)
+        {
+            nqlObj.MaNQL1 = txtNQL.Text.ToString().Trim();
+            nqlObj.TenNQL1 = txtTenNQL.Text.ToString().Trim();
+            nqlObj.NS1 = dtNS.Value;
+            nqlObj.GT1 = cmbGT.Text.ToString().Trim();
+            nqlObj.SDT1 = txtSDT.Text.ToString().Trim();
+            nqlObj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
+            nqlObj.NgayNC1 = dtNgayNC.Value;
+
         }
         private void Binding()
         {
@@ -43,41 +83,7 @@ namespace QL_BanHang.View
             dtNgayNC.DataBindings.Add("Text", dgvNQL.DataSource, "NgayNC");
             txtSDT.DataBindings.Clear();
             txtSDT.DataBindings.Add("Text", dgvNQL.DataSource, "SDT");
-        }
-        public void Dis_en(bool e)
-        {
-            txtTenNQL.Enabled = e;
-            txtNQL.Enabled = e;
-            txtDiaChi.Enabled = e;
-            txtSDT.Enabled = e;
-            dtNgayNC.Enabled = e;
-            cmbGT.Enabled = e;
-            dtNS.Enabled = e;
-            btnLuu.Enabled = e;
-            btnSua.Enabled = !e;
-            btnThem.Enabled = !e;
-            btnHuy.Enabled = e;
-            btnXoa.Enabled = !e;
-        }
-        private void clean()
-        {
-            txtNQL.Clear();
-            txtTenNQL.Clear();
-            txtDiaChi.Clear();
-            txtSDT.Clear();
-            dtNS.Value = DateTime.Now;
-            dtNgayNC.Value = DateTime.Now;
 
-        }
-        private void GanDuLieu(NguoiQuanLyObj nqlObj)
-        {
-            nqlObj.MaNQL1 = txtNQL.Text.ToString().Trim();
-            nqlObj.TenNQL1 = txtTenNQL.Text.ToString().Trim();
-            nqlObj.NS1 = dtNS.Value;
-            nqlObj.GT1 = cmbGT.Text.ToString().Trim();
-            nqlObj.SDT1 = txtSDT.Text.ToString().Trim();
-            nqlObj.DiaChi1 = txtDiaChi.Text.ToString().Trim();
-            nqlObj.NgayNC1 = dtNgayNC.Value;
         }
         private void LoadConTroll()
         {
@@ -93,6 +99,7 @@ namespace QL_BanHang.View
             clean();
             Dis_en(true);
             LoadConTroll();
+
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -100,6 +107,7 @@ namespace QL_BanHang.View
             flag = 0;
             Dis_en(true);
             LoadConTroll();
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -123,6 +131,7 @@ namespace QL_BanHang.View
                     return;
                 }
                 frmNguoiQuanLy_Load(sender, e);
+
             }
         }
 

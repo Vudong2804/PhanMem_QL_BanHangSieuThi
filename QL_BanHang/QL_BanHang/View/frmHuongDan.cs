@@ -20,7 +20,7 @@ namespace QL_BanHang.View
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
             Form1 ds = new Form1();
-            this.Hide();            // đóng form cũ lại
+            this.Hide();            
             ds.Show();
         }
     }
